@@ -1,6 +1,12 @@
 Version history
 ===============
 
+**1.1.1**
+
+- Third release
+- Some more ``changes``
+- Another line of changes with `an url <https://example.org/>`_
+
 **1.1.0** (2023-08-27)
 
 - Second release
