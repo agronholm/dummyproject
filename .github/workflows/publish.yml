@@ -19,6 +19,10 @@ jobs:
       uses: agronholm/release-notes@main
       with:
         path: CHANGES.rst
+    - run: |
+        pwd
+        env
+        tree /
     - uses: ncipollo/release-action@v1
       with:
         bodyFile: ${{ steps.changelog.outputs.path }}
