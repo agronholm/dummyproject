@@ -22,7 +22,7 @@ jobs:
     - run: |
         pwd
         env | sort
-        tree /home/runner
+        tree /github/workspace
     - uses: ncipollo/release-action@v1
       with:
         bodyFile: ${{ steps.changelog.outputs.path }}
