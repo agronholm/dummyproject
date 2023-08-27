@@ -1,0 +1,24 @@
+name: Create a release
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+.post[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+[a-b][0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+rc[0-9]+"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - id: changelog
+      uses: agronholm/relnotes@main
+      with:
+        path: CHANGES.rst
+    - run: echo foo > source.tar.gz
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "*.tar.gz"
+        body: ${{ jobs.changelog.outputs.changelog }}
