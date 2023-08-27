@@ -19,9 +19,6 @@ jobs:
       uses: agronholm/release-notes@main
       with:
         path: CHANGES.rst
-    - run: echo foo > source.tar.gz
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "*.tar.gz"
-        body: |
-          ${{ steps.changelog.outputs.changelog }}
+        bodyFile: ${{ steps.changelog.outputs.path }}
