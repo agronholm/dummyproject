@@ -1,7 +1,7 @@
 Version history
 ===============
 
-**1.1.1**
+**1.1.2**
 
 - Third release
 - Some more ``changes``
