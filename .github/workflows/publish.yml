@@ -19,6 +19,9 @@ jobs:
       uses: agronholm/release-notes@main
       with:
         path: CHANGES.rst
+        header: |
+          Changes
+          =======
     - run: |
         pwd
         env | sort
@@ -26,4 +29,5 @@ jobs:
         tree /home/runner
     - uses: ncipollo/release-action@v1
       with:
-        bodyFile: ${{ steps.changelog.outputs.path }}
+        body: |
+          ${{ steps.changelog.outputs.changelog }}
