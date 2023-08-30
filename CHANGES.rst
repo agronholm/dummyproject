@@ -1,6 +1,12 @@
 Version history
 ===============
 
+**1.1.3**
+
+- Multi
+- Line
+- Changelog
+
 **1.1.2**
 
 - Third release
